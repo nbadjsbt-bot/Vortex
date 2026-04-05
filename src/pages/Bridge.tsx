@@ -16,15 +16,15 @@ export default function Bridge() {
         ease: 'power2.out',
         delay: 0.5
       });
-      gsap.from('.author-card', { y: 40, opacity: 0, duration: 0.8, delay: 0.4 });
+      gsap.fromTo('.author-card', { y: 20, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.6, delay: 0.15, clearProps: 'opacity,transform' }); gsap.set('.author-card', { autoAlpha: 1 });
     },
     { scope: containerRef }
   );
 
   return (
-    <div className="min-h-screen py-16 px-4" ref={containerRef}>
+    <div className="min-h-screen py-10 px-4" ref={containerRef}>
       {/* CONFIRMATION HEADER */}
-      <div className="max-w-3xl mx-auto text-center mb-16">
+      <div className="max-w-3xl mx-auto text-center mb-10">
         <div className="flex justify-center items-center gap-4 text-sm font-bold mb-12">
           <div className="step-progress text-emerald-400 flex items-center gap-2">
             <div className="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center text-xs">
@@ -75,14 +75,14 @@ export default function Bridge() {
         </p>
       </div>
 
-      <div className="max-w-2xl mx-auto mb-16">
-        <GlassCard className="author-card !bg-indigo-900/20 border-indigo-500/30">
+      <div className="max-w-2xl mx-auto mb-6">
+        <GlassCard className="author-card !opacity-100 !bg-indigo-900/20 border-indigo-500/30">
           <AuthorInline author={config.author} />
         </GlassCard>
       </div>
 
       {/* STORY SECTION */}
-      <div className="max-w-2xl mx-auto prose prose-invert prose-lg text-slate-300 leading-relaxed mb-16">
+      <div className="max-w-2xl mx-auto text-slate-300 text-lg leading-relaxed mb-12 space-y-6">
         <p>Before you check your email — I want to share something with you.</p>
 
         <p>
