@@ -10,7 +10,7 @@ export default function Review() {
   useGSAP(
     () => {
       gsap.from('.hero-h1', { y: 40, opacity: 0, duration: 0.8, ease: 'power3.out' });
-      gsap.from('.verdict-box', { scale: 0.9, opacity: 0, duration: 0.6, delay: 0.4 });
+      gsap.from('.verdict-box', { scale: 0.97, autoAlpha: 0, duration: 0.6, delay: 0.2 }); gsap.set('.verdict-box', { autoAlpha: 1 });
 
       gsap.utils.toArray<HTMLElement>('.module-card').forEach((card, i) => {
         gsap.from(card, {
@@ -170,8 +170,7 @@ export default function Review() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   // NEW HERO IMAGE (your pixabay link)
-  const reviewHeroImg =
-    'https://pixabay.com/images/download/satheeshsankaran-ai-generated-8644599_1920.jpg';
+  const reviewHeroImg = '/images/review-hero.png';
 
   return (
     <div className="min-h-screen py-12 px-4" ref={containerRef}>
@@ -214,12 +213,12 @@ export default function Review() {
 
       {/* VERDICT */}
       <div className="max-w-3xl mx-auto mb-20">
-        <GlassCard className="verdict-box !bg-slate-900/80 border-l-4 border-l-emerald-500">
+        <GlassCard className="verdict-box !opacity-100 !bg-slate-950/95 !backdrop-blur-xl border border-white/10 shadow-[0_25px_90px_rgba(0,0,0,0.65)]">
           <h2 className="text-2xl font-bold text-white mb-6">
             Quick Verdict — For Readers Who Won&apos;t Read Everything
           </h2>
 
-          <ul className="space-y-4 mb-8 text-slate-300">
+          <ul className="space-y-4 mb-8 text-slate-100">
             <li className="flex gap-3">
               <span className="text-emerald-500">✅</span> AI Partner Accelerator is the most
               complete AI-powered affiliate system {config.author.name} has reviewed on
@@ -427,7 +426,7 @@ export default function Review() {
           </p>
           <div className="bg-black/30 p-4 rounded-xl text-sm text-slate-400 text-left">
             <strong>How to Claim:</strong> After purchase, email your Digistore24 receipt to{' '}
-            <span className="text-white">{config.bonusEmail}</span> with subject line “AI Partner
+            <span className="text-white break-all">{config.bonusEmail}</span> with subject line “AI Partner
             Bonus Claim.” {config.author.name} will deliver all 5 bonuses within 24 hours.
           </div>
         </GlassCard>
@@ -494,7 +493,7 @@ export default function Review() {
             rel="nofollow sponsored"
             className="w-full max-w-xl py-6 text-xl mb-6 shadow-[0_0_40px_rgba(99,102,241,0.4)] hover:shadow-[0_0_60px_rgba(99,102,241,0.6)]"
           >
-            {config.ctaText}
+            Get Instant Access + $405 in Bonuses ?
           </Button>
 
           <p className="text-slate-400 text-sm">
