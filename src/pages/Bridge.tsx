@@ -75,11 +75,15 @@ export default function Bridge() {
         </p>
       </div>
 
-      <div className="max-w-2xl mx-auto mb-6">
-        <GlassCard className="author-card !opacity-100 !bg-indigo-900/20 border-indigo-500/30">
-          <AuthorInline author={config.author} />
-        </GlassCard>
-      </div>
+      <div className="max-w-2xl mx-auto mb-8">
+  <div className="author-inline-card rounded-2xl border border-white/15 bg-slate-900/80 backdrop-blur-xl p-6 flex items-center gap-4 shadow-[0_20px_60px_rgba(0,0,0,0.6)]">
+    <img src={config.author.photo} alt={config.author.name} className="w-14 h-14 rounded-full border-2 border-indigo-500 object-cover" />
+    <div className="text-left">
+      <div className="text-white font-bold text-lg leading-tight">{config.author.name}</div>
+      <div className="text-slate-300 text-sm">Senior Editor</div>
+    </div>
+  </div>
+</div>
 
       {/* STORY SECTION */}
       <div className="max-w-2xl mx-auto text-slate-300 text-lg leading-relaxed mb-12 space-y-6">
